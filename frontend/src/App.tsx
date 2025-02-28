@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Navbar } from "./components";
 import {
   About,
   Cart,
@@ -14,6 +15,7 @@ import {
 const App = () => {
   return (
     <main className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
