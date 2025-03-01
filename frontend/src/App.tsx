@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Footer, Navbar } from "./components";
+import { Footer, Navbar, Search } from "./components";
 import {
   About,
   Cart,
@@ -16,6 +16,7 @@ const App = () => {
   return (
     <main className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <Navbar />
+      <Search />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />

@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { products } from "../assets/assets";
 
 import { IProduct } from "./types";
@@ -11,22 +11,34 @@ type TShopContext = {
   products: IProduct[];
   currency: string;
   deliveryFee: number;
+  search: string;
+  showSearch: boolean;
+  setSearch: (search: string) => void;
+  setShowSearch: (show: boolean) => void;
 };
 
 export const ShopContext = createContext<TShopContext>({
   products: [],
   currency: "",
   deliveryFee: 0,
+  search: "",
+  setSearch: () => {},
+  showSearch: true,
+  setShowSearch: () => {},
 });
 
 const ShopContextProvider = (props: ShopContextProps) => {
-  const currency = "$";
-  const deliveryFee = 10;
+  const [search, setSearch] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
   const value = {
     products,
-    currency,
-    deliveryFee,
+    currency: "$",
+    deliveryFee: 10,
+    search,
+    setSearch,
+    showSearch,
+    setShowSearch,
   };
 
   return (

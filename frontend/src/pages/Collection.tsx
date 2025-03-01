@@ -5,7 +5,7 @@ import { useShop } from "../hooks";
 import { IProduct } from "../context/types";
 
 const Collection = () => {
-  const { products } = useShop();
+  const { products, search, showSearch } = useShop();
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [filterProducts, setFilterProducts] = useState<IProduct[]>([]);
   const [category, setCategory] = useState<string[]>([]);
@@ -34,6 +34,12 @@ const Collection = () => {
 
   const handleFilter = () => {
     let productsCopy = products.slice();
+
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter((product) =>
+        product.name.toLowerCase().includes(search.toLowerCase())
+      );
+    }
 
     if (category.length) {
       productsCopy = productsCopy.filter((product) =>
@@ -68,7 +74,7 @@ const Collection = () => {
 
   useEffect(() => {
     handleFilter();
-  }, [category, subCategory]);
+  }, [category, subCategory, search, showSearch]);
 
   useEffect(() => {
     sortProducts();

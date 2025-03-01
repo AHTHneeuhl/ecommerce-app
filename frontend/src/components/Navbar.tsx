@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useState } from "react";
+import { useShop } from "../hooks";
 
 const Navbar = () => {
+  const { setShowSearch, showSearch } = useShop();
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
@@ -44,6 +46,7 @@ const Navbar = () => {
           src={assets.search_icon}
           className="w-5 cursor-pointer"
           alt="search icon"
+          onClick={() => setShowSearch(!showSearch)}
         />
         <div className="group relative">
           <img
