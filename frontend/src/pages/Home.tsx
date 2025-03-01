@@ -1,4 +1,4 @@
-import { BestSellers, Hero, LatestCollection } from "../components";
+import { BestSellers, Hero, LatestCollection, OurPolicy } from "../components";
 
 const Home = () => {
   return (
@@ -6,6 +6,7 @@ const Home = () => {
       <Hero />
       <LatestCollection />
       <BestSellers />
+      <OurPolicy />
     </div>
   );
 };
