@@ -9,9 +9,15 @@ interface ShopContextProps {
 
 type TShopContext = {
   products: IProduct[];
+  currency: string;
+  deliveryFee: number;
 };
 
-export const ShopContext = createContext<TShopContext>({ products: [] });
+export const ShopContext = createContext<TShopContext>({
+  products: [],
+  currency: "",
+  deliveryFee: 0,
+});
 
 const ShopContextProvider = (props: ShopContextProps) => {
   const currency = "$";
