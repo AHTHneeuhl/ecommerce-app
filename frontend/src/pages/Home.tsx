@@ -1,4 +1,10 @@
-import { BestSellers, Hero, LatestCollection, OurPolicy } from "../components";
+import {
+  BestSellers,
+  Hero,
+  LatestCollection,
+  NewsLetter,
+  OurPolicy,
+} from "../components";
 
 const Home = () => {
   return (
@@ -7,6 +13,7 @@ const Home = () => {
       <LatestCollection />
       <BestSellers />
       <OurPolicy />
+      <NewsLetter />
     </div>
   );
 };
