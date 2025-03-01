@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import {
   About,
   Cart,
@@ -27,6 +27,7 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
+      <Footer />
     </main>
   );
 };
