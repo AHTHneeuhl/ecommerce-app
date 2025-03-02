@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { Footer, Navbar, Search } from "./components";
 import {
   About,
@@ -15,6 +16,7 @@ import {
 const App = () => {
   return (
     <main className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+      <ToastContainer />
       <Navbar />
       <Search />
       <Routes>
