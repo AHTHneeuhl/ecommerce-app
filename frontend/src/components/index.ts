@@ -8,3 +8,4 @@ export { default as OurPolicy } from "./OurPolicy";
 export { default as ProductItem } from "./ProductItem";
 export { default as Search } from "./Search";
 export { default as Title } from "./Title";
+export { default as RelatedProducts } from "./RelatedProducts";
